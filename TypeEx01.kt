@@ -124,4 +124,55 @@ fun main() {
     // 대소문자
     println( stringValue.lowercase())   // hello kotlin string/hello/kotlin/string
     println( stringValue.uppercase())   // HELLO KOTLIN STRING/HELLO/KOTLIN/STRING
+
+    var stringValues: String = "Hello Kotlin String Hello Kotlin String"
+
+    println( stringValues.indexOf("Ko"))        // 6
+    println( stringValues.lastIndexOf("Ko"))    // 26
+    println( stringValues.startsWith("He"))     // true
+    println( stringValues.endsWith("ng"))       // false
+    println( stringValues.contains("ri"))       // true
+
+    var replaceValue: String = stringValues.replace("Kotlin","Java") // Hello Java String Hello Java String
+
+    println(replaceValue)
+
+    var formatValue: String = String.format("%s %s","Hello", "Kotlin")
+    println(formatValue)
+
+    var trimValue = "Hello ".trim()
+    println(trimValue)
+
+    var stringBuilder1: StringBuilder = StringBuilder()
+    var stringBuilder2: StringBuilder = StringBuilder("Hello Kotlin String")
+    var stringBuilder3: StringBuilder = StringBuilder(10)
+    
+    println( stringBuilder1.length )        // 0
+    println( stringBuilder2.length )        // 19
+
+    println( stringBuilder3.capacity());    // 10
+    println( stringBuilder2.capacity());    // 35
+
+    stringBuilder2.append(" 123")
+    stringBuilder2.append(" 456")
+
+    println( stringBuilder2 )                   // Hello Kotlin String 123 456
+
+    stringBuilder2.insert(0, "String ")
+    println( stringBuilder2 )                   // String Hello Kotlin String 123 456
+
+    stringBuilder2.delete(0,7)
+    println(stringBuilder2)                     // Hello Kotlin String 123 456
+
+    stringBuilder2.deleteCharAt(0)
+    println(stringBuilder2)                     // ello Kotlin String 123 456
+
+    stringBuilder2.reverse()
+    println(stringBuilder2)                     // 654 321 gnirtS niltoK olle
+    println(stringBuilder2.substring(0 .. 5))   // 654 32
+    println(stringBuilder2[0])                  // 6
+    println(stringBuilder2[1])                  // 5
+
+    var tempValue: String = stringBuilder2.toString()
+    println(tempValue)                          // 654 321 gnirtS niltoK olle
 }
